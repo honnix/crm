@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_honnix_crm_domain_Product" items="${products}" z="vAb8mnrzOsWEfm6DRbn8Jd05ZRU=">
+        <table:table data="${products}" id="l_com_honnix_crm_domain_Product" path="/products" z="o0ugu/XpPx3oRFyQxn9bPxSLq8g=">
+            <table:column id="c_com_honnix_crm_domain_Product_name" property="name" z="oQXz1rCCTPj8HLiheAyUZDQXctU="/>
+            <table:column id="c_com_honnix_crm_domain_Product_description" property="description" z="vTdPKR/CN+vM4pfrhTvxqnCxAIk="/>
+            <table:column id="c_com_honnix_crm_domain_Product_price" property="price" z="IUjWUYecEAuqDK5vUpEl+OWeQy0="/>
+        </table:table>
+    </page:list>
+</div>

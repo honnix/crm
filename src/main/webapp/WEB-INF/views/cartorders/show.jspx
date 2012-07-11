@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_honnix_crm_domain_CartOrder" object="${cartorder}" path="/cartorders" z="r7ip6GTyYx6b2ajhTukrZ4u/eBs=">
+        <field:display field="customerId" id="s_com_honnix_crm_domain_CartOrder_customerId" object="${cartorder}" z="gR1uxIw+jjtliSLttb/hiAhgnEU="/>
+        <field:display date="true" dateTimePattern="${cartOrder_dateoforder_date_format}" field="dateOfOrder" id="s_com_honnix_crm_domain_CartOrder_dateOfOrder" object="${cartorder}" z="r7Y4E+iG5HBDhRTDQfRj0CAAqZ0="/>
+        <field:display field="inCart" id="s_com_honnix_crm_domain_CartOrder_inCart" object="${cartorder}" z="ywz0oJ4feKz/82yY36Bo4TqpmyY="/>
+    </page:show>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_honnix_crm_domain_Customer" items="${customers}" z="0QeRNGz6eBi0JQI+TqvbaGX/7mA=">
+        <table:table data="${customers}" id="l_com_honnix_crm_domain_Customer" path="/customers" z="YVr2BtNQku+l0DR67m945oWSK+8=">
+            <table:column id="c_com_honnix_crm_domain_Customer_companyId" property="companyId" z="GJ0bzqoX5/PqgoytDZHVAcbG9nI="/>
+            <table:column id="c_com_honnix_crm_domain_Customer_lastName" property="lastName" z="gmgiuQb9y1LKaLocect5elFlp7g="/>
+            <table:column id="c_com_honnix_crm_domain_Customer_firstName" property="firstName" z="HBTKZhfqcnZv8hm9Quc/R4uOGtE="/>
+            <table:column id="c_com_honnix_crm_domain_Customer_email" property="email" z="TyUXze++1R4m/sFGGLFwAq6WDi0="/>
+            <table:column date="true" dateTimePattern="${customer_birthday_date_format}" id="c_com_honnix_crm_domain_Customer_birthday" property="birthday" z="vNwHM8vlFwpxJiLKJhmPOUJMWbI="/>
+        </table:table>
+    </page:list>
+</div>

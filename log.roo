@@ -1,0 +1,33 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-07-11 15:03:29
+project --topLevelPackage com.honnix.crm
+persistence setup --provider HIBERNATE --database H2_IN_MEMORY 
+database properties set --key database.url --value jdbc:h2:tcp://localhost/~/roo_crm
+database reverse engineer --schema PUBLIC --package ~.domain
+focus --class ~.domain.Customer
+finder list
+finder add --finderName findCustomersByFirstNameLike
+web mvc setup
+web mvc all --package ~.web
+web flow 
+security setup
+focus --class ~.domain.Customer
+finder add --finderName findCustomersByFirstNameLike
+controller all --package ~.web
+web mvc all --package ~.web
+web mvc finder all
+test integration --entity ~.domain.Customer
+test integration --entity ~.domain.Company
+test integration --entity ~.domain.Product
+test integration --entity ~.domain.LineItem
+test integration --entity ~.domain.CartOrder
+test mock 
+help test mock
+perform tests
+perform tests
+test integration 
+test integration --entity ~.domain.Customer
+dod
+dod --entity ~.domain.CartOrder
+date
+help osgi
+osgi version
