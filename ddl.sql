@@ -3,6 +3,8 @@ drop table company;
 drop table customer; 
 drop table product ; 
 drop table line_item;
+drop table users;
+drop table authorities;
 
 CREATE TABLE product (
                 id IDENTITY NOT NULL,
@@ -75,3 +77,23 @@ FOREIGN KEY (cart_order_id)
 REFERENCES cart_order (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
+
+-- spring security tables
+
+CREATE TABLE users(
+    username varchar_ignorecase(50) NOT NULL PRIMARY KEY,
+    password varchar_ignorecase(100) NOT NULL,
+    enabled BOOLEAN NOT NULL);
+
+CREATE TABLE authorities (
+    username varchar_ignorecase(50) NOT NULL,
+    authority varchar_ignorecase(50) NOT NULL
+);
+
+ALTER TABLE authorities ADD CONSTRAINT authorities_users_fk
+FOREIGN KEY (username)
+REFERENCES users (username)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+CREATE UNIQUE INDEX ix_auth_username ON authorities (username,authority);
