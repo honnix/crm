@@ -3,7 +3,7 @@
 
 package com.honnix.crm.domain;
 
-import com.honnix.crm.domain.Company;
+import com.honnix.crm.domain.CompanyDataOnDemand;
 import com.honnix.crm.domain.Customer;
 import com.honnix.crm.domain.CustomerDataOnDemand;
 import java.security.SecureRandom;
@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect CustomerDataOnDemand_Roo_DataOnDemand {
@@ -26,10 +27,12 @@ privileged aspect CustomerDataOnDemand_Roo_DataOnDemand {
     
     private List<Customer> CustomerDataOnDemand.data;
     
+    @Autowired
+    private CompanyDataOnDemand CustomerDataOnDemand.companyDataOnDemand;
+    
     public Customer CustomerDataOnDemand.getNewTransientCustomer(int index) {
         Customer obj = new Customer();
         setBirthday(obj, index);
-        setCompanyId(obj, index);
         setEmail(obj, index);
         setFirstName(obj, index);
         setLastName(obj, index);
@@ -39,11 +42,6 @@ privileged aspect CustomerDataOnDemand_Roo_DataOnDemand {
     public void CustomerDataOnDemand.setBirthday(Customer obj, int index) {
         Date birthday = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setBirthday(birthday);
-    }
-    
-    public void CustomerDataOnDemand.setCompanyId(Customer obj, int index) {
-        Company companyId = null;
-        obj.setCompanyId(companyId);
     }
     
     public void CustomerDataOnDemand.setEmail(Customer obj, int index) {

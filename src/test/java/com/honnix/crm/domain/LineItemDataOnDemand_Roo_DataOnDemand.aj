@@ -3,7 +3,7 @@
 
 package com.honnix.crm.domain;
 
-import com.honnix.crm.domain.CartOrder;
+import com.honnix.crm.domain.CartOrderDataOnDemand;
 import com.honnix.crm.domain.LineItem;
 import com.honnix.crm.domain.LineItemDataOnDemand;
 import com.honnix.crm.domain.ProductDataOnDemand;
@@ -26,18 +26,15 @@ privileged aspect LineItemDataOnDemand_Roo_DataOnDemand {
     private List<LineItem> LineItemDataOnDemand.data;
     
     @Autowired
+    private CartOrderDataOnDemand LineItemDataOnDemand.cartOrderDataOnDemand;
+    
+    @Autowired
     private ProductDataOnDemand LineItemDataOnDemand.productDataOnDemand;
     
     public LineItem LineItemDataOnDemand.getNewTransientLineItem(int index) {
         LineItem obj = new LineItem();
-        setCartOrderId(obj, index);
         setQuantity(obj, index);
         return obj;
-    }
-    
-    public void LineItemDataOnDemand.setCartOrderId(LineItem obj, int index) {
-        CartOrder cartOrderId = null;
-        obj.setCartOrderId(cartOrderId);
     }
     
     public void LineItemDataOnDemand.setQuantity(LineItem obj, int index) {
